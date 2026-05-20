@@ -46,8 +46,6 @@ Verify backup first.   ← crisp resumes here
 
 Crisp follows the [Agent Skills](https://agentskills.io) specification. It works with any agent that supports skills.
 
-**Claude Code:**skill
-
 ```bash
 npx skills add shubhamv123/crisp
 ```
