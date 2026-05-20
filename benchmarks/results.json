@@ -1,0 +1,64 @@
+[
+  {
+    "model": "claude-haiku-4-5-20251001",
+    "model_label": "Haiku 4.5",
+    "prompts": [
+      {
+        "id": "react-rerender",
+        "trigger": "/crisp",
+        "with_skill": { "avg_tokens": 378, "avg_words": 82 },
+        "without_skill": { "avg_tokens": 599, "avg_words": 197 },
+        "token_reduction_pct": 36.89,
+        "word_reduction_pct": 58.38
+      }
+      ,
+      {
+        "id": "db-pooling",
+        "trigger": "go crisp.",
+        "with_skill": { "avg_tokens": 427, "avg_words": 87 },
+        "without_skill": { "avg_tokens": 600, "avg_words": 262 },
+        "token_reduction_pct": 28.83,
+        "word_reduction_pct": 66.79
+      }
+      ,
+      {
+        "id": "drop-table",
+        "trigger": "be brief.",
+        "with_skill": { "avg_tokens": 364, "avg_words": 81 },
+        "without_skill": { "avg_tokens": 523, "avg_words": 160 },
+        "token_reduction_pct": 30.40,
+        "word_reduction_pct": 49.38
+      }
+      ,
+      {
+        "id": "auth-vs-authz",
+        "trigger": "cut the fluff.",
+        "with_skill": { "avg_tokens": 173, "avg_words": 34 },
+        "without_skill": { "avg_tokens": 312, "avg_words": 118 },
+        "token_reduction_pct": 44.55,
+        "word_reduction_pct": 71.19
+      }
+      ,
+      {
+        "id": "multi-turn-recall",
+        "trigger": "stop being verbose.",
+        "with_skill": { "avg_tokens": 333, "avg_words": 35 },
+        "without_skill": { "avg_tokens": 325, "avg_words": 93 },
+        "token_reduction_pct": -2.46,
+        "word_reduction_pct": 62.37
+      }
+    ]
+  }
+,
+  {
+    "model": "claude-sonnet-4-6",
+    "model_label": "Sonnet 4.6",
+    "prompts": [
+      {
+        "id": "react-rerender",
+        "trigger": "/crisp",
+        "with_skill": { "avg_tokens": 104, "avg_words": 56 },
+        "without_skill": { "avg_tokens": 340, "avg_words": 173 },
+        "token_reduction_pct": 69.41,
+        "word_reduction_pct": 67.63
+      }

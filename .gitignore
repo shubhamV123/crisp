@@ -1,0 +1,10 @@
+*.log
+node_modules
+dist
+.env
+.DS_Store
+coverage
+.idea
+.vscode 
+*.iml
+EOF
