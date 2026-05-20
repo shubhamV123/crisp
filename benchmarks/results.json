@@ -5,47 +5,42 @@
     "prompts": [
       {
         "id": "react-rerender",
-        "trigger": "/crisp",
-        "with_skill": { "avg_tokens": 378, "avg_words": 82 },
-        "without_skill": { "avg_tokens": 599, "avg_words": 197 },
-        "token_reduction_pct": 36.89,
-        "word_reduction_pct": 58.38
+        "with_skill": { "avg_tokens": 317, "avg_words": 61 },
+        "without_skill": { "avg_tokens": 615, "avg_words": 188 },
+        "token_reduction_pct": 48.46,
+        "word_reduction_pct": 67.55
       }
       ,
       {
         "id": "db-pooling",
-        "trigger": "go crisp.",
-        "with_skill": { "avg_tokens": 427, "avg_words": 87 },
-        "without_skill": { "avg_tokens": 600, "avg_words": 262 },
-        "token_reduction_pct": 28.83,
-        "word_reduction_pct": 66.79
+        "with_skill": { "avg_tokens": 392, "avg_words": 42 },
+        "without_skill": { "avg_tokens": 520, "avg_words": 256 },
+        "token_reduction_pct": 24.62,
+        "word_reduction_pct": 83.59
       }
       ,
       {
         "id": "drop-table",
-        "trigger": "be brief.",
-        "with_skill": { "avg_tokens": 364, "avg_words": 81 },
-        "without_skill": { "avg_tokens": 523, "avg_words": 160 },
-        "token_reduction_pct": 30.40,
-        "word_reduction_pct": 49.38
+        "with_skill": { "avg_tokens": 401, "avg_words": 38 },
+        "without_skill": { "avg_tokens": 496, "avg_words": 150 },
+        "token_reduction_pct": 19.15,
+        "word_reduction_pct": 74.67
       }
       ,
       {
         "id": "auth-vs-authz",
-        "trigger": "cut the fluff.",
-        "with_skill": { "avg_tokens": 173, "avg_words": 34 },
-        "without_skill": { "avg_tokens": 312, "avg_words": 118 },
-        "token_reduction_pct": 44.55,
-        "word_reduction_pct": 71.19
+        "with_skill": { "avg_tokens": 191, "avg_words": 30 },
+        "without_skill": { "avg_tokens": 386, "avg_words": 124 },
+        "token_reduction_pct": 50.52,
+        "word_reduction_pct": 75.81
       }
       ,
       {
         "id": "multi-turn-recall",
-        "trigger": "stop being verbose.",
-        "with_skill": { "avg_tokens": 333, "avg_words": 35 },
-        "without_skill": { "avg_tokens": 325, "avg_words": 93 },
-        "token_reduction_pct": -2.46,
-        "word_reduction_pct": 62.37
+        "with_skill": { "avg_tokens": 224, "avg_words": 41 },
+        "without_skill": { "avg_tokens": 230, "avg_words": 70 },
+        "token_reduction_pct": 2.61,
+        "word_reduction_pct": 41.43
       }
     ]
   }
@@ -56,9 +51,89 @@
     "prompts": [
       {
         "id": "react-rerender",
-        "trigger": "/crisp",
-        "with_skill": { "avg_tokens": 104, "avg_words": 56 },
-        "without_skill": { "avg_tokens": 340, "avg_words": 173 },
-        "token_reduction_pct": 69.41,
-        "word_reduction_pct": 67.63
+        "with_skill": { "avg_tokens": 107, "avg_words": 56 },
+        "without_skill": { "avg_tokens": 356, "avg_words": 182 },
+        "token_reduction_pct": 69.94,
+        "word_reduction_pct": 69.23
       }
+      ,
+      {
+        "id": "db-pooling",
+        "with_skill": { "avg_tokens": 80, "avg_words": 44 },
+        "without_skill": { "avg_tokens": 351, "avg_words": 215 },
+        "token_reduction_pct": 77.21,
+        "word_reduction_pct": 79.53
+      }
+      ,
+      {
+        "id": "drop-table",
+        "with_skill": { "avg_tokens": 90, "avg_words": 19 },
+        "without_skill": { "avg_tokens": 367, "avg_words": 117 },
+        "token_reduction_pct": 75.48,
+        "word_reduction_pct": 83.76
+      }
+      ,
+      {
+        "id": "auth-vs-authz",
+        "with_skill": { "avg_tokens": 14, "avg_words": 8 },
+        "without_skill": { "avg_tokens": 67, "avg_words": 36 },
+        "token_reduction_pct": 79.10,
+        "word_reduction_pct": 77.78
+      }
+      ,
+      {
+        "id": "multi-turn-recall",
+        "with_skill": { "avg_tokens": 113, "avg_words": 32 },
+        "without_skill": { "avg_tokens": 224, "avg_words": 55 },
+        "token_reduction_pct": 49.55,
+        "word_reduction_pct": 41.82
+      }
+    ]
+  }
+,
+  {
+    "model": "claude-opus-4-7",
+    "model_label": "Opus 4.7",
+    "prompts": [
+      {
+        "id": "react-rerender",
+        "with_skill": { "avg_tokens": 83, "avg_words": 32 },
+        "without_skill": { "avg_tokens": 113, "avg_words": 45 },
+        "token_reduction_pct": 26.55,
+        "word_reduction_pct": 28.89
+      }
+      ,
+      {
+        "id": "db-pooling",
+        "with_skill": { "avg_tokens": 62, "avg_words": 23 },
+        "without_skill": { "avg_tokens": 163, "avg_words": 70 },
+        "token_reduction_pct": 61.96,
+        "word_reduction_pct": 67.14
+      }
+      ,
+      {
+        "id": "drop-table",
+        "with_skill": { "avg_tokens": 66, "avg_words": 22 },
+        "without_skill": { "avg_tokens": 213, "avg_words": 94 },
+        "token_reduction_pct": 69.01,
+        "word_reduction_pct": 76.60
+      }
+      ,
+      {
+        "id": "auth-vs-authz",
+        "with_skill": { "avg_tokens": 21, "avg_words": 8 },
+        "without_skill": { "avg_tokens": 79, "avg_words": 32 },
+        "token_reduction_pct": 73.42,
+        "word_reduction_pct": 75.00
+      }
+      ,
+      {
+        "id": "multi-turn-recall",
+        "with_skill": { "avg_tokens": 33, "avg_words": 16 },
+        "without_skill": { "avg_tokens": 137, "avg_words": 38 },
+        "token_reduction_pct": 75.91,
+        "word_reduction_pct": 57.89
+      }
+    ]
+  }
+]

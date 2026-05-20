@@ -3,7 +3,7 @@
 Real token counts from the Claude API.
 Each prompt run 3 times per model, results averaged.
 Baseline = plain Claude with no skill active.
-Run date: 2026-05-20T10:33:28Z
+Run date: 2026-05-20T15:42:17Z
 
 ## Results by model
 
@@ -11,46 +11,46 @@ Run date: 2026-05-20T10:33:28Z
 
 | Metric | Average reduction |
 |--------|------------------|
-| Output tokens | **33.85%** |
-| Word count | **59.14%** |
+| Output tokens | **29.07%** |
+| Word count | **68.61%** |
 
 | Prompt | Without crisp (tokens) | With crisp (tokens) | Token % | Without crisp (words) | With crisp (words) | Word % |
 |--------|----------------------|--------------------|---------|-----------------------|--------------------|--------|
-| react-rerender | 601 | 317 | 47.25% | 180 | 79 | 56.11% |
-| db-pooling | 627 | 355 | 43.38% | 281 | 55 | 80.43% |
-| drop-table | 551 | 386 | 29.95% | 143 | 90 | 37.06% |
-| auth-vs-authz | 308 | 195 | 36.69% | 121 | 33 | 72.73% |
-| multi-turn-recall | 267 | 235 | 11.99% | 77 | 39 | 49.35% |
+| react-rerender | 615 | 317 | 48.46% | 188 | 61 | 67.55% |
+| db-pooling | 520 | 392 | 24.62% | 256 | 42 | 83.59% |
+| drop-table | 496 | 401 | 19.15% | 150 | 38 | 74.67% |
+| auth-vs-authz | 386 | 191 | 50.52% | 124 | 30 | 75.81% |
+| multi-turn-recall | 230 | 224 | 2.61% | 70 | 41 | 41.43% |
 
 ### Sonnet 4.6 `claude-sonnet-4-6`
 
 | Metric | Average reduction |
 |--------|------------------|
-| Output tokens | **64.49%** |
-| Word count | **68.03%** |
+| Output tokens | **70.26%** |
+| Word count | **70.42%** |
 
 | Prompt | Without crisp (tokens) | With crisp (tokens) | Token % | Without crisp (words) | With crisp (words) | Word % |
 |--------|----------------------|--------------------|---------|-----------------------|--------------------|--------|
-| react-rerender | 294 | 109 | 62.93% | 158 | 59 | 62.66% |
-| db-pooling | 360 | 101 | 71.94% | 216 | 55 | 74.54% |
-| drop-table | 194 | 84 | 56.70% | 86 | 19 | 77.91% |
-| auth-vs-authz | 75 | 14 | 81.33% | 43 | 8 | 81.40% |
-| multi-turn-recall | 222 | 112 | 49.55% | 55 | 31 | 43.64% |
+| react-rerender | 356 | 107 | 69.94% | 182 | 56 | 69.23% |
+| db-pooling | 351 | 80 | 77.21% | 215 | 44 | 79.53% |
+| drop-table | 367 | 90 | 75.48% | 117 | 19 | 83.76% |
+| auth-vs-authz | 67 | 14 | 79.10% | 36 | 8 | 77.78% |
+| multi-turn-recall | 224 | 113 | 49.55% | 55 | 32 | 41.82% |
 
 ### Opus 4.7 `claude-opus-4-7`
 
 | Metric | Average reduction |
 |--------|------------------|
-| Output tokens | **68.23%** |
-| Word count | **65.54%** |
+| Output tokens | **61.37%** |
+| Word count | **61.10%** |
 
 | Prompt | Without crisp (tokens) | With crisp (tokens) | Token % | Without crisp (words) | With crisp (words) | Word % |
 |--------|----------------------|--------------------|---------|-----------------------|--------------------|--------|
-| react-rerender | 133 | 79 | 40.60% | 51 | 31 | 39.22% |
-| db-pooling | 326 | 49 | 84.97% | 136 | 18 | 86.76% |
-| drop-table | 228 | 57 | 75.00% | 110 | 20 | 81.82% |
-| auth-vs-authz | 88 | 21 | 76.14% | 36 | 8 | 77.78% |
-| multi-turn-recall | 135 | 48 | 64.44% | 38 | 22 | 42.11% |
+| react-rerender | 113 | 83 | 26.55% | 45 | 32 | 28.89% |
+| db-pooling | 163 | 62 | 61.96% | 70 | 23 | 67.14% |
+| drop-table | 213 | 66 | 69.01% | 94 | 22 | 76.60% |
+| auth-vs-authz | 79 | 21 | 73.42% | 32 | 8 | 75.00% |
+| multi-turn-recall | 137 | 33 | 75.91% | 38 | 16 | 57.89% |
 
 ## Notes
 

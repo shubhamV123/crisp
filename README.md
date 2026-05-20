@@ -104,38 +104,38 @@ Crisp automatically switches to clear prose for:
 It resumes crisp immediately after the warning is done. You don't need to manage this — it happens automatically.
 
 ---
-
+ 
 ## crisp — benchmark results
-
+ 
 Benchmarked using real Claude API output tokens across 3 runs per prompt (averaged).  
 Baseline = plain Claude without crisp enabled.
-
+ 
 ### Average Reduction
-
+ 
 | Model      | Output Tokens | Word Count |
 | ---------- | ------------: | ---------: |
-| Haiku 4.5  |    **33.85%** | **59.14%** |
-| Sonnet 4.6 |    **64.49%** | **68.03%** |
-| Opus 4.7   |    **68.23%** | **65.54%** |
-
+| Haiku 4.5  |    **29.07%** | **68.61%** |
+| Sonnet 4.6 |    **70.26%** | **70.42%** |
+| Opus 4.7   |    **61.37%** | **61.10%** |
+ 
 ### Highlights
-
-- Up to **68% fewer output tokens**
-- Up to **68% shorter responses**
+ 
+- Up to **70% fewer output tokens**
+- Up to **70% shorter responses**
 - Works best on verbose reasoning-heavy answers
 - Safety/clarity preserved for risky operations (`drop-table` intentionally less compressed)
-
+ 
 ### Notes
-
+ 
 - Output tokens measured from Claude API `.modelUsage[model].outputTokens`
 - Input token usage is unchanged
 - Benchmarks run on: `2026-05-20`
 - Reproduce locally:
-
+ 
 ```bash
 chmod +x run_benchmark.sh && ./run_benchmark.sh
 ```
-
+ 
 ---
 
 > Built and tested following the [Agent Skills](https://agentskills.io/skill-creation/best-practices) specification.
