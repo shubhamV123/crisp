@@ -22,11 +22,25 @@ Same fix. A fraction of the words.
 
 ---
 
-## Why crisp over other terse skills
+## Attribution
 
-Most terse/brevity skills just make the agent shorter. Crisp does one thing differently:
+crisp was inspired by existing terse-output and agent-behavior work, including:
 
-**It knows when NOT to be terse.**
+- [Caveman by Julius Brussee](https://github.com/JuliusBrussee/caveman)
+- [Caveman skill by Matt Pocock](https://github.com/mattpocock/skills/blob/main/skills/productivity/caveman/SKILL.md)
+- Common “no fluff” prompting patterns used in coding-agent workflows
+
+crisp is my professional-tone variation of this idea: normal concise replies, no meme-style output, and clearer handling around code, errors, and risky operations.
+
+---
+
+## Why crisp
+
+crisp focuses on concise replies that still sound normal and professional.
+
+The goal is not maximum compression at all costs. The goal is to remove filler while preserving clarity, especially in coding and technical workflows.
+
+**crisp stays terse by default, but stops compressing when clarity matters.**
 
 Destructive operations, security warnings, and irreversible actions automatically get clear full-sentence warnings — then crisp resumes immediately after. You get speed everywhere except where clarity actually matters.
 
@@ -44,7 +58,7 @@ Verify backup first.   ← crisp resumes here
 
 ## Install
 
-Crisp follows the [Agent Skills](https://agentskills.io) specification. It works with any agent that supports skills.
+crisp follows the [Agent Skills](https://agentskills.io) specification. It works with any agent that supports skills.
 
 ```bash
 npx skills add shubhamv123/crisp
@@ -74,13 +88,17 @@ Once active, crisp stays on for the entire conversation — no need to re-trigge
 
 ---
 
-## What gets dropped
+## What crisp reduces
 
-- Articles: a / an / the
-- Filler: just / really / basically / actually / simply
-- Pleasantries: sure / happy to / great question / certainly
-- Hedging: "it's worth noting that" / "you might want to consider"
-- Restating your question back to you
+- Unnecessary openings: "sure", "happy to help", "great question"
+- Soft filler: "basically", "actually", "simply", "just"
+- Repeated context already present in the user’s message
+- Long hedging phrases when the answer is already clear
+- Over-explaining before the actual fix
+
+crisp should not remove words when doing so would make the answer ambiguous, unsafe, or harder to follow.
+
+---
 
 ## What always stays
 
@@ -93,7 +111,7 @@ Once active, crisp stays on for the entire conversation — no need to re-trigge
 
 ## Auto-Clarity Exception
 
-Crisp automatically switches to clear prose for:
+crisp automatically switches to clear prose for:
 
 - Destructive / irreversible operations
 - Security warnings
@@ -102,38 +120,38 @@ Crisp automatically switches to clear prose for:
 It resumes crisp immediately after the warning is done. You don't need to manage this — it happens automatically.
 
 ---
- 
+
 ## crisp — benchmark results
- 
-Benchmarked using real Claude API output tokens across 3 runs per prompt (averaged).  
+
+Benchmarked using real Claude API output tokens across 3 runs per prompt averaged.  
 Baseline = plain Claude without crisp enabled.
- 
+
 ### Average Reduction
- 
+
 | Model      | Output Tokens | Word Count |
 | ---------- | ------------: | ---------: |
 | Haiku 4.5  |    **29.07%** | **68.61%** |
 | Sonnet 4.6 |    **70.26%** | **70.42%** |
 | Opus 4.7   |    **61.37%** | **61.10%** |
- 
+
 ### Highlights
- 
+
 - Up to **70% fewer output tokens**
 - Up to **70% shorter responses**
 - Works best on verbose reasoning-heavy answers
 - Safety/clarity preserved for risky operations (`drop-table` intentionally less compressed)
- 
+
 ### Notes
- 
+
 - Output tokens measured from Claude API `.modelUsage[model].outputTokens`
 - Input token usage is unchanged
 - Benchmarks run on: `2026-05-20`
 - Reproduce locally:
- 
+
 ```bash
 chmod +x run_benchmark.sh && ./run_benchmark.sh
 ```
- 
+
 ---
 
-> Built and tested following the [Agent Skills](https://agentskills.io/skill-creation/best-practices) specification.
+> Built and tested following the [Agent Skills](https://agentskills.io/skill-creation/best-practices) specification. Inspired by existing terse-output skills, with a focus on normal professional concise output.
