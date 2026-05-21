@@ -1,6 +1,6 @@
 # crisp
 
-Terse mode for AI agents. Full technical accuracy. Zero fluff.
+A terse-output skill for AI agents. Shorter replies without stripping technical details.
 
 ---
 
@@ -18,7 +18,7 @@ Terse mode for AI agents. Full technical accuracy. Zero fluff.
 > if (now <= expiry) { ... }
 > ```
 
-Same fix. A fraction of the words.
+Same technical details. Fewer words.
 
 ---
 
@@ -30,7 +30,7 @@ crisp was inspired by existing terse-output and agent-behavior work, including:
 - [Caveman skill by Matt Pocock](https://github.com/mattpocock/skills/blob/main/skills/productivity/caveman/SKILL.md)
 - Common “no fluff” prompting patterns used in coding-agent workflows
 
-crisp is my professional-tone variation of this idea: normal concise replies, no meme-style output, and clearer handling around code, errors, and risky operations.
+crisp is my professional-tone variation of this idea: normal concise replies, no meme-style output, and careful preservation of code, errors, commands, numbers, and risky-operation context.
 
 ---
 
@@ -40,18 +40,18 @@ crisp focuses on concise replies that still sound normal and professional.
 
 The goal is not maximum compression at all costs. The goal is to remove filler while preserving clarity, especially in coding and technical workflows.
 
-**crisp stays terse by default, but stops compressing when clarity matters.**
+**crisp is designed to stay terse by default, but use clearer wording when compression could make the answer unsafe or ambiguous.**
 
-Destructive operations, security warnings, and irreversible actions automatically get clear full-sentence warnings — then crisp resumes immediately after. You get speed everywhere except where clarity actually matters.
+For destructive operations, security warnings, and irreversible actions, crisp instructs the agent to use clear full-sentence warnings before returning to concise output. The goal is faster reading without compressing the parts where clarity matters.
 
 ```
-// Destructive op — crisp switches to clear prose automatically:
+// Destructive op — crisp uses clear prose first:
 
 Warning: This permanently destroys all data in `users`. Cannot be undone.
 
 DROP TABLE users;
 
-Verify backup first.   ← crisp resumes here
+Verify backup first.   ← concise mode resumes here
 ```
 
 ---
@@ -96,34 +96,46 @@ Once active, crisp stays on for the entire conversation — no need to re-trigge
 - Long hedging phrases when the answer is already clear
 - Over-explaining before the actual fix
 
-crisp should not remove words when doing so would make the answer ambiguous, unsafe, or harder to follow.
+crisp removes filler, but not at the cost of clarity or safety.
 
 ---
 
 ## What always stays
 
-- All technical terms, exact and unchanged
+- Technical terms, exact and unchanged
 - Code blocks, untouched
 - Error messages, quoted exactly
+- Commands and flags
 - Numbers and specifics
+- Security warnings and destructive-action context
+
+---
+
+## What crisp does not guarantee
+
+crisp does not make the underlying model more correct.
+
+It only changes response style: fewer filler words, less repetition, and careful preservation of technical details such as code, commands, error messages, numbers, and warnings.
+
+Correctness still depends on the model, prompt, and context.
 
 ---
 
 ## Auto-Clarity Exception
 
-crisp automatically switches to clear prose for:
+crisp is designed to use clearer prose for:
 
 - Destructive / irreversible operations
 - Security warnings
 - Multi-step sequences where fragment order could cause mistakes
 
-It resumes crisp immediately after the warning is done. You don't need to manage this — it happens automatically.
+It resumes concise output after the warning or clarification is done. You don't need to manage this manually.
 
 ---
 
 ## crisp — benchmark results
 
-Benchmarked using real Claude API output tokens across 3 runs per prompt averaged.  
+Benchmarked using real Claude API output tokens across 3 runs per prompt, averaged.  
 Baseline = plain Claude without crisp enabled.
 
 ### Average Reduction
@@ -139,13 +151,15 @@ Baseline = plain Claude without crisp enabled.
 - Up to **70% fewer output tokens**
 - Up to **70% shorter responses**
 - Works best on verbose reasoning-heavy answers
-- Safety/clarity preserved for risky operations (`drop-table` intentionally less compressed)
+- Risky-operation prompts, such as `drop-table`, are intentionally less compressed
 
 ### Notes
 
 - Output tokens measured from Claude API `.modelUsage[model].outputTokens`
 - Input token usage is unchanged
 - Benchmarks run on: `2026-05-20`
+- Benchmark results depend on the model, prompt type, and baseline verbosity
+- Benchmarks measure output length reduction only, not answer correctness
 - Reproduce locally:
 
 ```bash
@@ -154,4 +168,4 @@ chmod +x run_benchmark.sh && ./run_benchmark.sh
 
 ---
 
-> Built and tested following the [Agent Skills](https://agentskills.io/skill-creation/best-practices) specification. Inspired by existing terse-output skills, with a focus on normal professional concise output.
+> Built and tested following the [Agent Skills](https://agentskills.io/skill-creation/best-practices) specification.
